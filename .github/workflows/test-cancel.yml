@@ -1,0 +1,13 @@
+# .github/workflows/test-cancel.yml
+name: Prueba de cancelación
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Esperar 60 segundos (simula trabajo largo)
+        run: sleep 60
