@@ -1,0 +1,12 @@
+name: Run Largo
+
+on:
+  push:
+
+jobs:
+  wait-job:
+    name: Esperar mucho
+    runs-on: ubuntu-latest
+    steps:
+      - name: Esperar 2 minutos
+        run: sleep 120
