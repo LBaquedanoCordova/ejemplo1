@@ -1,0 +1,24 @@
+# .github/workflows/hola-mundo.yml
+
+name: Saludo Personalizado
+
+on:
+  workflow_dispatch:
+    inputs:
+      nombre:
+        description: "¿A quién quieres saludar?"
+        required: true
+        default: "Luis"
+      entusiasmo:
+        description: "Nivel de entusiasmo"
+        required: false
+        default: "😀"
+
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Imprimir saludo
+        run: |
+          echo "¡Hola, ${{ github.event.inputs.nombre }}! ${{ github.event.inputs.entusiasmo }}"
